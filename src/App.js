@@ -1,24 +1,17 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import * as API from './Service/launches'
 
 function App() {
+  const [tickets, setTickets] = useState()
+
+  useEffect(() => {
+    API.GetUsers().then(setTickets)
+  },[])
+
+  console.log(tickets)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <h1>Test</h1>
   );
 }
 
